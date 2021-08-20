@@ -1,19 +1,21 @@
 
-import './App.css';
-
 import NavBarComp from './components/NavBar/NavBarComp'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ItemListContainer from './components/ListContainer/ItemListContainer'
 
 
 
 
-function App() {
+
+function EcomerceApp() {
   return (
     <div className="App">
-     <NavBarComp />
-     
+      <NavBarComp />
+      <ItemListContainer greeting="Hola" />
+      
+
     </div>
   );
 }
 
-export default App;
+export default EcomerceApp;
