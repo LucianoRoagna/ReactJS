@@ -19,7 +19,6 @@ function EcomerceApp() {
     <div className="App">
       <NavBarComp />
       <ItemListContainer />
-      <ItemListContainer Greeting="Hola" />
       <Cont initial={1} stock={10} onAdd={onAdd}/>
       
 
