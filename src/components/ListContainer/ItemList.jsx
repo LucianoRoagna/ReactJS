@@ -16,7 +16,7 @@ function ItemList({data}) {
     return (
         <div className="app">   
           <ul>
-          {data.map(element => <Item key={element.id}/>)}
+          {data.map(element => <Item key={element.id} products={element}/>)}
           </ul>
           
           </div>

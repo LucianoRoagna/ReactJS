@@ -1,20 +1,27 @@
-import React from 'react'
 
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 
+import './Item.css'
 
 
 
 
 function Item({products}) {
 
-    console.log(products)
+   
     return (
-     
-    <div className="App">
 
-    </div>
-     
-         
+        <Card style={{ width: '11rem' }}>
+        <Card.Img variant="top" src={products.img} />
+        <Card.Body>
+          <Card.Title>{products.price}</Card.Title>
+          <Card.Text>
+            {products.name}
+          </Card.Text>
+          <Button variant="primary">Add</Button>
+        </Card.Body>
+      </Card>
       
    
         
@@ -25,7 +32,10 @@ export default Item
 
 
 
-/*<div key={products.id} className="card w-50 mt-2">
+
+/* <div className="App">
+
+<div key={products.id} className="card w-50 mt-2">
              <div className="card-header">
                  {products.name}
              </div>
@@ -36,4 +46,7 @@ export default Item
                  {products.img}
              </div>
          </div> 
- */
+ 
+
+    </div>
+       */

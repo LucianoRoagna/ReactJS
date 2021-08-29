@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import ItemList from './ItemList'
 
-function ItemListContainer(){
+
 
 const productss =[
   {id:1 , name:"Hyperex Cloud II PC" , price:11000 , img:"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_11934_Auriculares_HyperX_Cloud_II_Red_PC___PS4___Switch___XBOX_94ae061e-med.jpg" , },
@@ -14,7 +14,8 @@ const productss =[
   {id:6 , name:"Reddragon H320" , price:4000 , img:"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_17681_Auriculares_Redragon_H320_Lamia_RGB_7.1_49c998dc-med.jpg" , },
   {id:7 , name:"Nisuta NS-AUG300C" , price:3500 , img:"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_23872_Auriculares_Nisuta_NS-AUG300C_PS4_Camuflado_Jungle_dda541d8-med.jpg" , },
   {id:8 , name:"Marvo HG9056" , price: 5300, img:"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_20945_Auriculares_Marvo_HG9056_Rainbow_7.1_a1351721-med.jpg" , }
-]
+];
+
 
 
 function getProducts(id){
@@ -36,6 +37,8 @@ let tarea =new Promise((resolve)=>{
 })
 
 
+
+function ItemListContainer(){
  
  const[products,setProducts] = useState([])
  
