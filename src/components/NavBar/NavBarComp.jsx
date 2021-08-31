@@ -10,7 +10,7 @@ function NavBarComp() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">Ivosol-Perif</Navbar.Brand>
+        <Navbar.Brand href="#home">Lazo-Gaming</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">

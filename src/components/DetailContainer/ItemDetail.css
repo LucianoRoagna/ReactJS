@@ -1,15 +1,10 @@
-
-  
-
-  
-
-
-  .card-ecommerce{
+.card-ecommerce{
     height:100%;
     position:relative;
     padding:15px;
     box-shadow:1px 5px 15px rgba(17,23,21,.16);
     border-radius:6px;
+    
   }
   
   .img{
