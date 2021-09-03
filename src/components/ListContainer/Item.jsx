@@ -1,9 +1,9 @@
  // import Card from 'react-bootstrap/Card'
  // import Button from 'react-bootstrap/Button'
 //import  CardGroup  from 'react-bootstrap/CardGroup'
-
+//import { Link } from 'react-router-dom'
 import './Item.css'
-
+import { Link } from 'react-router-dom'
 
 
 
@@ -21,7 +21,9 @@ function Item({products}) {
             <img className="img" src={products.img} alt="" />
             <h1 className="price">${products.price}</h1>
              <h1 className="name">{products.name}</h1>
-             <button className="btn" type="button" name="button">Details</button>
+             <Link to="/Detail">
+             <button className="btn" type="button" name="button">Find more</button>
+             </Link>
             </div>
         </div>
         

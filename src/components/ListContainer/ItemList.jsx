@@ -5,7 +5,6 @@ import Item from './Item'
 
 
 
-
 function ItemList({product}) {
    
     
@@ -14,12 +13,12 @@ function ItemList({product}) {
 
 
     return (
-        <div className="app">   
+        <div classname="app">
          <ul>
-          {product.map(element => <Item key={element.id} products={element}/>)}
+         {product.map(element => <Item key={element.id} products={element}/>)}
           </ul>
           
-          </div>
+         </div>
     )}
     
     

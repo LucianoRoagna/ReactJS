@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import './Cont.css'
 
-function Cont({initial,stock,onAdd}) {
+  function Cont({initial,stock,onAdd}) {
   const [cont, setCont] = useState(initial);
 
   const add = () => {
@@ -23,25 +23,36 @@ function Cont({initial,stock,onAdd}) {
   
 
   return (
+   
     <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>Producto</Card.Title>
-    <Card.Text>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae consequuntur dolorum corrupti quasi dolorem non tenetur .
-    </Card.Text>
-    <Button variant="primary" onClick={add}>+</Button>
-    <label>{cont}</label>
-    <Button variant="primary" onClick={remove}>-</Button>
-<Button variant="primary" onClick={handlerOnAdd}>Agregar</Button>
-  </Card.Body>
-</Card>
+    <Card.Img variant="top" src="holder.js/100px180" />
+    <Card.Body>
+      <Card.Title>Producto</Card.Title>
+      <Card.Text>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae consequuntur dolorum corrupti quasi dolorem non tenetur .
+      </Card.Text>
+      <Button variant="primary" onClick={add}>+</Button>
+      <label>{cont}</label>
+      <Button variant="primary" onClick={remove}>-</Button>
+  <Button variant="primary" onClick={handlerOnAdd}>Agregar</Button>
+    </Card.Body>
+  </Card>
+    
    
   );
   }
 
 
 export default Cont;
+
+
+
+
+/*  */
+
+
+
+
 
 
 

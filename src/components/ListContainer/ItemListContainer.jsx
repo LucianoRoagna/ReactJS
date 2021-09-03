@@ -1,42 +1,39 @@
-import React from 'react'
-import { useEffect } from 'react'
-import { useState } from 'react'
-import ItemList from './ItemList'
-import { tarea } from './utils/promises'
+import {useEffect, useState} from "react"
+import { tarea } from "../utils/promises"
+import { useParams } from "react-router-dom"
+import ItemList from "./ItemList"
 
 
-
-
-
-
-
-function ItemListContainer(){
  
- const[products,setProducts] = useState([])
- const[loading,setloading]= useState(true)
-  useEffect(()=>{
+
+
+
+
+
+function ItemListContainer() {
+  const[products,setProducts]=useState([])
+    const{category}=useParams()
+
+useEffect(() => {
+    if(category===undefined){
+        tarea
+        .then((resp)=>setProducts(resp) )
+        
+    }else{
     tarea
-    .then((resp)=> {
-    setProducts(resp)
-   setloading(false)
-    })
-  },[])
-
-
-
-
-  return (
-    <div>
-      {loading ?
-       <h2>Loading...</h2>
-       : 
-       <ItemList product={products}/>}
-      
-      </div>
-     
-     
-  )}
-  
-
+    .then((resp)=>setProducts(resp.filter(r => category===r.brand)))
+    }
+    },[category])
+   
+   
+   
+       
+ 
+    return (
+       
+<ItemList product={products} />
+       
+    )
+}
 
 export default ItemListContainer;
