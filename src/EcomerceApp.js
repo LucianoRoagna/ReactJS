@@ -1,7 +1,7 @@
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import NavBarComp from './components/NavBar/NavBarComp'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemListContainer from './components/DetailContainer/ItemDetailContainer'
+import ItemListContainer from './components/ListContainer/ItemListContainer';
 import ItemDetailContainer from './components/DetailContainer/ItemDetailContainer';
 
  //import Cont from './components/Contador/Cont' 
@@ -19,28 +19,37 @@ function EcomerceApp() {
 
   return (
     <div className="App" >
-    <Router>
-       <NavBarComp/>
-            <Switch>
+<Router>
+                <NavBarComp />
+                    <Switch>
 
-                <Route exact path='/'>
-                    <ItemListContainer titulo={'hola'} />
-                </Route>
+                        <Route exact path='/'>
+                            <ItemListContainer  />
+                        </Route>
+                      
 
-                <Route exact path='/brand/:category'>
-                    <ItemListContainer titulo={'hola'} />
-                </Route>
+                        <Route exact path='/brand/:category'>
+                            <ItemListContainer />
+                        </Route>
 
-               
-                <Route exact path='/Detail' component={ItemDetailContainer} />
-                
-                {/* <Cart /> */}
-            </Switch>
-        {/* <Footer /> */}
-        {/* <ItemCount /> */}
-    </Router>
+
+                        <Route exact path='/brand/Home'>
+                          <ItemDetailContainer/>
+                        </Route>
+                       
+                        <Route exact path='/Detail/:id'>
+                          <ItemDetailContainer/>
+                          </Route> 
+                        
+                        {/* <Cart /> */}
+                    </Switch>
+                {/* <Footer /> */}
+                {/* <ItemCount /> */}
+            </Router>
+
+
     </div>
-);
+  )
 }
 
 export default EcomerceApp;
