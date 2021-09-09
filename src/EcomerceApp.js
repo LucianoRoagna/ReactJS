@@ -3,8 +3,10 @@ import NavBarComp from './components/NavBar/NavBarComp'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemListContainer from './components/ListContainer/ItemListContainer';
 import ItemDetailContainer from './components/DetailContainer/ItemDetailContainer';
-
+//import CartWidget from './components/Widget/CartWidget';
+//import { cartContext } from './context/cartContext';
  //import Cont from './components/Contador/Cont' 
+ //import { useState } from 'react';
 
 
 
@@ -12,12 +14,11 @@ import ItemDetailContainer from './components/DetailContainer/ItemDetailContaine
 
 function EcomerceApp() {
 
-    /*const onAdd = (cont) => {
-    console.log(`la cantidad es ${cont}`);
-     } */
+
   
 
   return (
+    /* <cartContextProvider> */
     <div className="App" >
 <Router>
                 <NavBarComp />
@@ -40,15 +41,18 @@ function EcomerceApp() {
                         <Route exact path='/Detail/:id'>
                           <ItemDetailContainer/>
                           </Route> 
+                        <Route exact path='/CartWidget'>
+                         
+                        </Route>
                         
-                        {/* <Cart /> */}
                     </Switch>
-                {/* <Footer /> */}
-                {/* <ItemCount /> */}
+                
+                
             </Router>
 
 
     </div>
+   /* </cartContextProvider> */
   )
 }
 
