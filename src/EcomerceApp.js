@@ -3,6 +3,9 @@ import NavBarComp from './components/NavBar/NavBarComp'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemListContainer from './components/ListContainer/ItemListContainer';
 import ItemDetailContainer from './components/DetailContainer/ItemDetailContainer';
+
+import Cart from './components/Widget/Cart'
+import CartContextProvider from './context/CartContext';
 //import CartWidget from './components/Widget/CartWidget';
 //import { cartContext } from './context/cartContext';
  //import Cont from './components/Contador/Cont' 
@@ -18,7 +21,7 @@ function EcomerceApp() {
   
 
   return (
-    /* <cartContextProvider> */
+     <CartContextProvider> 
     <div className="App" >
 <Router>
                 <NavBarComp />
@@ -41,8 +44,8 @@ function EcomerceApp() {
                         <Route exact path='/Detail/:id'>
                           <ItemDetailContainer/>
                           </Route> 
-                        <Route exact path='/CartWidget'>
-                         
+                        <Route exact path='/Cart'>
+                         <Cart/>
                         </Route>
                         
                     </Switch>
@@ -52,7 +55,7 @@ function EcomerceApp() {
 
 
     </div>
-   /* </cartContextProvider> */
+    </CartContextProvider> 
   )
 }
 

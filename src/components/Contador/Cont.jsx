@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, } from 'react';
+import { CartContext } from '../../context/CartContext';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button'
 import './Cont.css'
 
-  function Cont({initial,stock,onAdd}) {
+
+
+  function Cont({initial,stock,onAdd,item}) {
   const [cont, setCont] = useState(initial);
-const[changeButton,setChangeButton]=useState(false)
+  const[changeButton,setChangeButton]=useState(false)
+  const{addToCart}=useContext(CartContext)
+  
   const add = () => {
     if(cont < stock)
     setCont(cont + 1);
@@ -16,9 +22,12 @@ const[changeButton,setChangeButton]=useState(false)
     setCont(cont - 1);
   };
 
- const handlerOnAdd=()=>{
-   onAdd(cont)
-   setCont(initial)
+
+  
+
+ const handlerOnAdd=(quantity)=>{
+   console.log(quantity)
+   addToCart(item,quantity)
    setChangeButton(true)
  }
 
@@ -37,13 +46,14 @@ const[changeButton,setChangeButton]=useState(false)
   
   {
     changeButton?
-    <Link to='/CartWidget'>
-     <Button classname="button2" variant="primary" >Go to cart</Button>
+    <Link to='/Cart'>
+     <Button  variant="primary"  >Go to cart</Button>
     </Link>
    
     :
-    <Button className="button1" variant="primary" onClick={handlerOnAdd}>Add to cart</Button>
+    <Button variant="primary" onClick={handlerOnAdd}>Add to cart</Button>
   }
+  
    
    
   </div>

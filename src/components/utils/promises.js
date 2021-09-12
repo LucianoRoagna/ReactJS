@@ -1,4 +1,4 @@
-const product =[
+ export const product =[
  
     {id:"1" , name:"Hyperex Cloud II PC" , price:11000 , img:"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_11934_Auriculares_HyperX_Cloud_II_Red_PC___PS4___Switch___XBOX_94ae061e-med.jpg" , brand:"Hyperex" },
     {id:"2" , name:"Hyperex Cloud Stinger PC" , price:5000 , img:"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_9612_Auriculares_HyperX_Cloud_Stinger_Gaming_Negro__PC___PS4___Switch___XBOX_27f1808e-med.jpg", brand:"Hyperex"  },
