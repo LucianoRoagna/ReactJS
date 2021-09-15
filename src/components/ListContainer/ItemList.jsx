@@ -14,13 +14,16 @@ function ItemList({product}) {
 
     return (
         <div classname="app">
+           
          <ul>
          {product.map(element => <Item key={element.id} products={element}/>)}
           </ul>
           
          </div>
+                    
     )}
     
+  
     
 
 

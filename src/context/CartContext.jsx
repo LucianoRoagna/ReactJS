@@ -17,7 +17,7 @@ export function CartContextProvider({ children }) {
       });
       setCart(updateCart);
     } else {
-      setCart([...cart, { item, quantity }]);
+      setCart([...cart,  {item, quantity} ]);
     }
   };
 

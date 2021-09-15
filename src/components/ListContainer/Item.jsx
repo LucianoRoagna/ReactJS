@@ -35,17 +35,5 @@ export default Item
 
 
 
-/*  <Card 
-      style={{ width: '150px' }}>
-     <Card.Img variant="top" src={products.img} />
-     <Card.Body>
-       <Card.Title>${products.price}</Card.Title>
-       <Card.Text>
-         {products.name}
-       </Card.Text>
-       <Button variant="primary">Add</Button>
-     </Card.Body>
-   </Card>
-        */
 
 

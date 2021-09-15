@@ -7,8 +7,8 @@ import './Cont.css'
 
 
 
-  function Cont({initial,stock,onAdd,item}) {
-  const [cont, setCont] = useState(initial);
+   function Cont({initial,stock,item}) {
+    const [cont, setCont] = useState(initial);
   const[changeButton,setChangeButton]=useState(false)
   const{addToCart}=useContext(CartContext)
   
@@ -25,9 +25,10 @@ import './Cont.css'
 
   
 
- const handlerOnAdd=(quantity)=>{
-   console.log(quantity)
-   addToCart(item,quantity)
+ const handlerOnAdd=()=>{
+   
+   addToCart(item,cont)
+   console.log(item, 'la cantidad es '+ cont)
    setChangeButton(true)
  }
 

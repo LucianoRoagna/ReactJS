@@ -1,3 +1,5 @@
+
+ 
  export const product =[
  
     {id:"1" , name:"Hyperex Cloud II PC" , price:11000 , img:"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_11934_Auriculares_HyperX_Cloud_II_Red_PC___PS4___Switch___XBOX_94ae061e-med.jpg" , brand:"Hyperex" },
@@ -23,17 +25,16 @@
     }
   }
   
-  
-  
+
   
   
    export let tarea =new Promise((resolve)=>{
     setTimeout(()=>{
       resolve(getProducts());
     },3000);
+ 
+
   })
-
-
   
  
 

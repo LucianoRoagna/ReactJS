@@ -35,7 +35,7 @@ const onAdd=(cont)=>{
 
 
          
-         <Cont initial={1} stock={10} onAdd={onAdd}/>
+         <Cont item={producto} initial={1} stock={10} onAdd={onAdd}/>
          
         </div>
        
