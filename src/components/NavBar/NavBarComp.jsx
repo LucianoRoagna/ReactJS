@@ -9,7 +9,12 @@ import "./NavBarComp.css"
 
 
 
+
 function NavBarComp() {
+
+
+
+
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>

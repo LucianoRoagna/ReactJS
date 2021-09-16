@@ -54,6 +54,8 @@ import './Cont.css'
     :
     <Button variant="primary" onClick={handlerOnAdd}>Add to cart</Button>
   }
+
+  
   
    
    

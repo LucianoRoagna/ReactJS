@@ -2,15 +2,16 @@ import React from 'react'
 import "./CartWidget.css"
 import { CartContext } from '../../context/CartContext'
 import { useContext } from 'react'
-import Cont from '../Contador/Cont'
+
 import Button from 'react-bootstrap/Button'
+import { Link } from 'react-router-dom'
 
 
 
 
 
 function Cart() {
-    const{setCart,cart,removeItem,}=useContext(CartContext)
+    const{setCart,cart,removeItem,totalPrice}=useContext(CartContext)
 
 
     const clear=()=>setCart([])
@@ -32,8 +33,9 @@ function Cart() {
             <div key={element.item.id}>
                  <img src={element.item.img} alt="" />
                 <h1>{element.item.name}</h1>
-               
-               
+                <h2>Price:${element.item.price}</h2>
+               <h3>Quantity:{element.quantity}</h3>
+           
                 
               
                 <Button onClick={()=>removeItem(element.item.id)}>Remove from cart</Button>
@@ -44,9 +46,10 @@ function Cart() {
 
 
 
-
-
-
+<h4>  Total:${totalPrice()}</h4>
+<Link to='./'>
+<Button>Keep Buying</Button>
+</Link>
 </div>
         )
 }
