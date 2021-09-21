@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react"
-import { tarea } from "../utils/promises"
+
 import { useParams } from "react-router-dom"
 import ItemList from "./ItemList"
-
+import { getFirestore } from "../utils/getFirebase"
 
  
 
@@ -15,15 +15,29 @@ function ItemListContainer() {
     const{category}=useParams()
 
 useEffect(() => {
-    if(category===undefined){
-        tarea
-        .then((resp)=>setProducts(resp) )
-        
+    const database = getFirestore()
+    if(category){
+        const queryDB= database.collection('items').where('brand','==',`${category}`).get()
+        .then(data=>{
+            if(data.size===0){
+                console.log('no hay nada')
+            }
+            setProducts(data.docs.map(resp=>({id: resp.id, ...resp.data()}) ) )
+        })
     }else{
-    tarea
-    .then((resp)=>setProducts(resp.filter(r => category===r.brand)))
+        const allProd=database.collection('items').get()
+                .then(data=>{
+            if(data.size===0){
+                console.log('no hay nada')
+            }
+            setProducts(data.docs.map(resp=>({id: resp.id, ...resp.data()}) ) )
+        })
     }
+
     },[category])
+
+
+
    
    
    

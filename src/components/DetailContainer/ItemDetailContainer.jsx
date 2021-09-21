@@ -3,9 +3,9 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 //import { getProduc } from '../ListContainer/utils/promises'
 import ItemDetail from './ItemDetail'
-import { tarea } from '../utils/promises'
+//import { tarea } from '../utils/promises'
 import { useParams } from 'react-router'
-
+import { getFirestore } from '../utils/getFirebase'
 
 
 
@@ -20,8 +20,14 @@ const{id}=useParams()
 
 useEffect(()=>{
   
-   tarea
-   .then((resp)=>setProducto(resp.find(p=>id===p.id)))
+  const database = getFirestore()
+const queryDB= database.collection('items').doc(id).get()
+.then(data=>{
+    if(data.size===0){
+        console.log('no hay nada')
+    }
+    setProducto({id: data.id, ...data.data()})
+})
   
 },[id])
   return (

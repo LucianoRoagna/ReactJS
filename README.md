@@ -1,4 +1,4 @@
-Mi primer proyecto con ReactJS. Echo en el curso de CoderHouse.
+Mi primer proyecto con ReactJS. Hecho en el curso de CoderHouse.
 
 
 # Getting Started with Create React App

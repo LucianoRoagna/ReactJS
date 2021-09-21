@@ -16,7 +16,7 @@ function NavBarComp() {
 
 
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar class="navbar" collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Link to="/">
         <Navbar.Brand href="Home">Lazo-Gaming</Navbar.Brand>
