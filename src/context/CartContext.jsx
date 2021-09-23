@@ -7,7 +7,7 @@ export function CartContextProvider({ children }) {
   const [cart, setCart] = useState([]);
 
   const addToCart = (item, quantity) => {
-    const index = cart.findIndex(i => i.item.id === item.id);
+    const index = cart.findIndex((i) => i.item.id === item.id);
     if (index > -1) {
       const oldQy = cart[index].quantity;
 
@@ -23,16 +23,21 @@ export function CartContextProvider({ children }) {
     return setCart(cartFilter);
   };
 
-  const iconCart=()=>{
-    return cart.reduce((acum,valor)=>acum+valor.quantity,0)
-  }
+  const iconCart = () => {
+    return cart.reduce((acum, valor) => acum + valor.quantity, 0);
+  };
 
-  const totalPrice=()=>{
-    return cart.reduce((acum,valor)=>(acum +(valor.quantity*valor.item.price)),0)
-  }
+  const totalPrice = () => {
+    return cart.reduce(
+      (acum, valor) => acum + valor.quantity * valor.item.price,
+      0
+    );
+  };
 
   return (
-    <CartContext.Provider value={{ cart,iconCart,addToCart,removeItem,setCart,totalPrice }}>
+    <CartContext.Provider
+      value={{ cart, iconCart, addToCart, removeItem, setCart, totalPrice }}
+    >
       {children}
     </CartContext.Provider>
   );
