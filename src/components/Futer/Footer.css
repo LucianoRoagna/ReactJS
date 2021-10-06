@@ -1,0 +1,16 @@
+p{
+  display: flex;
+ justify-content: center;
+  font-family: sans-serif;
+    font-size: 20px;
+}
+
+footer{
+    background-color: gainsboro;
+    bottom: 0;
+    width: 100%;
+    position:fixed;
+  
+    
+    
+}

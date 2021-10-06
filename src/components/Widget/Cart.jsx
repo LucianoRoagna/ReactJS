@@ -8,6 +8,8 @@ import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import { getFirestore } from "../utils/getFirebase";
+import "./Cart.css"
+import tacho from "../img/tacho-de-reciclaje.png";
 
 
 function Cart() {
@@ -39,9 +41,13 @@ function submit(e){
   }
 const database=getFirestore()
 const orders=database.collection('orders')
+//controlar stock
+
+
 
 orders.add(newOrder)
-.then(resp=>alert(`su N° de compra es ${resp.id}`))
+.then(resp=>alert(`Su N° de compra es ${resp.id}`))
+//limpiar 
 .finally(()=>
 setFormData(initialState))
 clear()
@@ -52,81 +58,86 @@ clear()
   const clear = () => setCart([]);
 
   return (
-    <div>
-      <Button onClick={clear}>Clear items</Button>
+    <div className="Cart">
+      <Button className="Clear-button" onClick={clear}>Clear items</Button>
 
       {cart.length > 0 &&
         cart.map((element) => {
           return (
-            <div key={element.item.id}>
-              <img src={element.item.img} alt="" />
+            <div className="Prod"  key={element.item.id}>
+              
               <h1>{element.item.name}</h1>
               <h2>Price:${element.item.price}</h2>
-              <h3>Quantity:{element.quantity}</h3>
+              <h3 className="Quantity">Quantity:{element.quantity}</h3>
 
-              <Button onClick={() => removeItem(element.item.id)}>
-                Remove from cart
-              </Button>
+              
+                <img className="tacho" src={tacho} alt="" onClick={() => removeItem(element.item.id)}/>
+                
             </div>
           );
         })}
 
-      <h4> Total:${totalPrice()}</h4>
+      <h4 className="Total-Price"> Total:${totalPrice()}</h4>
       <Link to="./">
-        <Button>Keep Buying</Button>
+        <Button className="Keep-Buying">Keep Buying</Button>
       </Link>
 
+      <Form className="Form-1" onSubmit={submit} onChange={change}>
+        <Row className="mb-3">
+          <Form.Group as={Col} controlId="formGridEmail">
+            <Form.Label> Name</Form.Label>
+            <Form.Control
+              name="name"
+              value={formData.name}
+              placeholder="Enter name"
+            />
+          </Form.Group>
 
-      <Form   
-      onSubmit={submit}
-      onChange={change}>
-  <Row className="mb-3">
+          <Form.Group as={Col} controlId="formGridEmail">
+            <Form.Label>Email</Form.Label>
+            <Form.Control
+              name="email"
+              value={formData.email}
+              type="email"
+              placeholder="Enter email"
+            />
+          </Form.Group>
 
-  <Form.Group as={Col} controlId="formGridEmail" >
-      <Form.Label > Name</Form.Label>
-      <Form.Control name="name" value={formData.name} placeholder="Enter name" />
-    </Form.Group>
+          <Form.Group as={Col} controlId="formGridEmail">
+            <Form.Label>Email</Form.Label>
+            <Form.Control
+              name="email2"
+              value={formData.email}
+              type="email"
+              placeholder="Confirm email"
+            />
+          </Form.Group>
+        </Row>
 
-    <Form.Group as={Col} controlId="formGridEmail">
-      <Form.Label  >Email</Form.Label>
-      <Form.Control name="email" value={formData.email} type="email" placeholder="Enter email" />
-    </Form.Group>
+        <Row className="mb-3">
+          <Form.Group as={Col} controlId="formGridCity">
+            <Form.Label>Phone Number</Form.Label>
+            <Form.Control
+              name="tel"
+              value={formData.tel}
+              placeholder="Enter tel"
+            />
+          </Form.Group>
 
-    <Form.Group as={Col} controlId="formGridEmail" >
-      <Form.Label >Email</Form.Label>
-      <Form.Control name="email2" value={formData.email} type="email" placeholder="Confirm email" />
-    </Form.Group>
+          <Form.Group as={Col} className="mb-3" controlId="formGridAddress1">
+            <Form.Label>Address</Form.Label>
+            <Form.Control
+              name="adress"
+              value={formData.adress}
+              placeholder="Enter adress"
+            />
+          </Form.Group>
+        </Row>
 
-    
-   
-  </Row>
-
-  
-
-  
-
-  <Row className="mb-3">
-    <Form.Group as={Col} controlId="formGridCity" >
-      <Form.Label >Phone Number</Form.Label>
-      <Form.Control name="tel" value={formData.tel} placeholder="Enter tel" />
-    </Form.Group>
-
-    <Form.Group as={Col} className="mb-3" controlId="formGridAddress1" >
-    <Form.Label >Address</Form.Label>
-    <Form.Control name="adress" value={formData.adress} placeholder="Enter adress" />
-  </Form.Group>
-
-   
-  </Row>
-
- 
-
-  <Button variant="primary" type="submit">
-    Submit
-  </Button>
-</Form>
-
-
+        <Button className="submit-1" variant="primary" type="submit">
+          Submit
+        </Button>
+      </Form>
     </div>
   );
 }

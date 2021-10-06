@@ -12,21 +12,21 @@ function NavBarComp() {
       className="navbar"
       collapseOnSelect
       expand="lg"
-      bg="dark"
-      variant="dark"
+      bg="light"
+      variant="light"
     >
-      <Container >
+      <Container  >
         <Link  to="/">
-          <Navbar.Brand href="Home">Lazo-Gaming</Navbar.Brand>
+          <Navbar.Brand className="tittle"  href="Home">Lazo-Gaming</Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Link to="/">
-              <Nav.Link href="Home">Products</Nav.Link>
+              <Nav.Link className="prods" href="Home">Products</Nav.Link>
             </Link>
 
-            <NavDropdown title="Brands" id="collasible-nav-dropdown">
+            <NavDropdown className="brands" title="Brands" id="collasible-nav-dropdown">
               <Link to="/brand/Hyperex">
                 <NavDropdown.Item href="#action/3.1">Hyperex</NavDropdown.Item>
               </Link>

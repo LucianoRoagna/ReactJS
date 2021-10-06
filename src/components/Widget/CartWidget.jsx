@@ -3,21 +3,30 @@ import "./CartWidget.css";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import { useContext } from "react";
+import cart from "../img/cart-img.png";
 
 function CartWidget() {
   const { iconCart } = useContext(CartContext);
 
   return (
-    <div>
-      <Link to="/Cart">
-        <img
-          src="data:image/png;base64,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"
+    <div >
+      <Link  to="/Cart">
+        <img className="icon-cart"
+          src={cart}
           alt="icono de carrito"
         />
-        {iconCart()}
+        
+        
+        
       </Link>
+      <div className="cant">      {iconCart()}
+      </div>
+
     </div>
   );
 }
 
 export default CartWidget;
+
+
+

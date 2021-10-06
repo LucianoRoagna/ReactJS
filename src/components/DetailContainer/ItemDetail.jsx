@@ -11,16 +11,16 @@ function ItemDetail(props) {
   };
 
   return (
-    <div data-aos="fade-up" className="col-12 col-md-6 col-lg-4 col-xl-3">
-      <div className="card-ecommerce">
-        <i className="icon-favorites-card far fa-heart" />
-        <img className="img" src={producto.img} alt="" />
+   
+      <div className="card-ecommerce-2">
+        <img className="img-2" src={producto.img} alt="" />
         <h1 className="price">${producto.price}</h1>
         <h1 className="name">{producto.name}</h1>
+        
 
         <Cont item={producto} initial={1} stock={10} onAdd={onAdd} />
       </div>
-    </div>
+    
   );
 }
 

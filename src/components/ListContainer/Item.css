@@ -1,20 +1,42 @@
+ .ItemList{
+     width: 100%;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;
+     margin-top: 15px;
+padding-left: 60px;
+padding-right: 60px;
+    padding-top: 60px;
 
-  
-
-  
-
+    
+  }
 
   .card-ecommerce{
-    height:100%;
-    position:relative;
-    padding:15px;
-    box-shadow:1px 5px 15px rgba(17,23,21,.16);
-    border-radius:6px;
-  }
+   min-width: 400px;
+   min-height: 300px;
+    padding: 10px;
+    border:1px solid white;
+    box-shadow:0px 1px 10px rgba(17,23,21,.16);
+   margin: 20px;
+    overflow:hidden;
+    transition: 0.5s linear;
+    background-color: whitesmoke;
   
-  .img{
-    width:150px;
   }
+
+  .card:hover{
+    box-shadow: none;
+  }
+ 
+
+
+  
+   .img{
+    width:150px;
+   border:2px solid gainsboro;
+ 
+   }
+
   
   .price{
     font-size:30px;
@@ -29,9 +51,9 @@
     color:#222;
     text-align: center;
     font-family:'Poppins', sans-serif;
-  }
+  } 
   
-  .btn{
+   .btn{
     background:gray;
     width:100%;
     margin-top:10px;
@@ -46,18 +68,7 @@
     background:transparent;
     border:1px solid gray;
     transition:.5s;
-  }
-  
-  .icon-favorites-card{
-    position: absolute;
-      right: 0;
-      top: 0;
-      margin: 13px;
-      color: #675D5D;
-      background: #fff;
-      box-shadow: 1px 10px 15px rgb(17 23 21 / 16%);
-      padding: 10px;
-      border-radius: 200px;
-      transition: .5s;
-  }
-  
+  } 
+   
+ 
+   

@@ -1,0 +1,77 @@
+.Cart{
+    padding-bottom: 40px;
+}
+ .Clear-button{
+  
+  width: 100px;
+ ;
+ 
+ }
+
+
+.Prod{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  position: relative;
+  top: 30px;
+padding-right: 10px;
+padding-left: 20px;
+border: 1px solid gray;
+background: gainsboro;
+border-radius: 5%;
+  
+
+}
+
+.Total-Price{
+  position: relative;
+top: 30px;
+    
+}
+
+.Form-1{
+    padding:20px
+    
+  
+}
+
+.tacho{
+    background-color: transparent;
+    width: 30px;
+}
+
+
+.Keep-Buying{
+    position: relative;
+    width:100px;
+    height: 35px;
+    left: 150px;
+    top: -15px;
+    
+}
+
+.submit-1{
+  width: 50%;
+
+}
+
+
+.btn{
+  background:gray;
+  width:100%;
+  margin-top:10px;
+  font-family:'Poppins', sans-serif;
+  box-shadow:1px 5px 15px rgba(17,23,21,.16);
+  padding:7px 0px;
+  transition:.5s;
+  border:1px solid gray;
+}
+
+.btn:hover{
+  background:transparent;
+  border:1px solid gray;
+  transition:.5s;
+  color: black;
+} 

@@ -1,3 +1,27 @@
-img{
+.icon-cart{
+    margin-right: 30px;
     width: 60px;
+    background-color:transparent;
+    
+}
+.cant{
+position: absolute;
+top: 9px;
+right: 25px;
+font-size: 17px;
+background: crimson;
+padding: 1px 5px;
+border-radius: 50%;
+    color: gainsboro;
+
+}
+
+.icon-cart{
+    background: transparent;
+    width: 40px;
+}
+
+.cant:hover{
+    text-decoration: none;
+   color: whitesmoke;
 }

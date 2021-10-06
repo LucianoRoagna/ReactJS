@@ -1,14 +1,17 @@
+import "./Item.css";
 import React from "react";
 import Item from "./Item";
 
 function ItemList({ product }) {
   return (
-    <div classname="app">
-      <ul>
+    <div className="ItemList"  >
+     
         {product.map((element) => (
-          <Item key={element.id} products={element} />
+         
+         <Item key={element.id} products={element} />
+        
         ))}
-      </ul>
+      
     </div>
   );
 }

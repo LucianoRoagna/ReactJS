@@ -5,7 +5,7 @@ import ItemListContainer from './components/ListContainer/ItemListContainer';
 import ItemDetailContainer from './components/DetailContainer/ItemDetailContainer';
 import Cart from './components/Widget/Cart'
 import CartContextProvider from './context/CartContext';
-
+import Footer from './components/Futer/Footer';
 
 
 
@@ -21,10 +21,13 @@ function EcomerceApp() {
       <div className="App" >
         <Router>
           <NavBarComp />
+          
           <Switch>
 
             <Route exact path='/'>
+            
               <ItemListContainer />
+              
             </Route>
 
 
@@ -46,10 +49,10 @@ function EcomerceApp() {
 
           </Switch>
 
-
+         
         </Router>
 
-
+        <Footer/>
       </div>
     </CartContextProvider>
   )
